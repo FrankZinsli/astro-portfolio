@@ -2,7 +2,7 @@
 import MetaHead from '../components/layout/MetaHead.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import Counter from '../components/vue/counter.vue';
+import Swiper from '../components/vue/Swiper.vue';
 
 export interface Props {
 	title: string;
@@ -18,9 +18,6 @@ const { description } = Astro.props;
 	<body>
 		<Header></Header>
 		<slot />
-		<Counter client:visible>
-			<h1>Hello</h1>
-		</Counter>
 		<Footer></Footer>
 	</body>
 </html>
