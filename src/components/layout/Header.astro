@@ -1,10 +1,9 @@
 ---
 import Nav from "./Nav.astro";
 import { Picture } from '@astrojs/image/components';
-import heroImage from '../assets/hero.jpg';
+import heroImage from '../../assets/hero.jpg';
 ---
 <header>
     <Nav></Nav>
     <Picture src={heroImage} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="descriptive text" />
-
 </header>
