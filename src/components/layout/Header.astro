@@ -1,6 +1,6 @@
 ---
 import Nav from "./Nav.astro";
-import { Image, Picture } from '@astrojs/image/components';
+import { Image } from '@astrojs/image/components';
 import heroImage from '../../assets/hero.jpg';
 ---
 <header>
@@ -16,12 +16,4 @@ import heroImage from '../../assets/hero.jpg';
       alt="descriptive text"
     />
   </div>
-  <Picture
-    src={heroImage}
-    widths={[200, 400, 800]}
-    aspectRatio="2:1"
-    sizes="(max-width: 800px) 100vw, 800px"
-    alt="descriptive text"
-    format={"webp"}
-  />
 </header>
