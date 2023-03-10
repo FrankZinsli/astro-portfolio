@@ -2,7 +2,6 @@
 import MetaHead from '../components/layout/MetaHead.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import Swiper from '../components/vue/Swiper.vue';
 
 export interface Props {
 	title: string;
@@ -13,7 +12,7 @@ const { description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="de_CH">
+<html lang="de">
 	<MetaHead title={title} description={description}></MetaHead>
 	<body>
 		<Header></Header>
