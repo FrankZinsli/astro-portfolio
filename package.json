@@ -1,0 +1,25 @@
+{
+  "name": "red-ring",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.16.0",
+    "@astrojs/sitemap": "^1.2.0",
+    "@frontendista/astro-html-minify": "^1.0.7",
+    "astro": "^2.1.2",
+    "astro-compress": "^1.1.35",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0",
+    "sass": "^1.58.3"
+  }
+}

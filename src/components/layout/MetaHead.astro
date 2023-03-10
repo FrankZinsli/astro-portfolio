@@ -1,0 +1,69 @@
+---
+export interface Props {
+	title: string;
+	description: string
+}
+const { title } = Astro.props;
+const { description } = Astro.props;
+const defaultDescription = 'Vom Code zur Kreativität: Folgen Sie mir auf meinem digitalen Weg';
+import '../../styles/normalize.css';
+---
+
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Author & Copyright -->
+    <meta name="author" content="Frank Zinsli">
+    <meta name="abstract" content="Persönliches Portfolio von Frank Zinsli">
+    <meta name="classification" content="Portfolio Website">
+    <meta name="copyright" content="Copyright by Frank Zinsli - All rights Reserved.">
+    <meta name="designer" content="Frank Zinsli">
+    <meta name="language" content="de_CH">
+    <meta name="publisher" content="Frank Zinsli">
+    <meta name="subject" content="Portfolio, Web Design, Code & Tutorials">
+    <meta name="keywords" content="Portfolio, Web Design, Code & Tutorials">
+
+    <!--  Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Facebook Tags -->
+    <meta property="og:url" content="https://frankzinsli.ch">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Frankly Web">
+    <meta property="og:image" content="https://frankzinsli.ch/og-image.jpg">
+    <meta property="og:image:alt" content="OG-Bild von meinem persönlichen Portfolio.">
+    <meta property="og:description" content={defaultDescription}>
+    <meta property="og:site_name" content="Frankly Web">
+    <meta property="og:locale" content="de_CH">
+    <meta property="article:author" content="Frank Zinsli">
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://frankzinsli.ch">
+    <meta name="twitter:title" content="Frankly Web">
+    <meta name="twitter:description" content={defaultDescription}>
+    <meta name="twitter:image" content="https://frankzinsli.ch/og-image.jpg">
+    <meta name="twitter:image:alt" content="OG-Bild von meinem persönlichen Portfolio.">
+
+    <!-- PWA  -->
+    <meta name="application-name" content="Frankly Web">
+
+    <!-- Google  -->
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="google" content="notranslate">
+
+    <!-- Aditional  -->
+    <meta name="rating" content="General">
+    <meta name="referrer" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Astro  -->
+    <meta name="generator" content={Astro.generator} />
+
+</head>
