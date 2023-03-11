@@ -30,3 +30,20 @@ import Layout from '../layouts/Layout.astro';
 		
 	</main>
 </Layout>
+<style lang="scss" is:global>
+	:root {
+		--font-base: 'Comfortaa', cursive;
+		--font-heading: 'Maven Pro', sans-serif;
+		--color-primary: #ffff;
+		--color-secondary: #efe;
+		--color-accent: #eee;
+	}
+</style>
+<style lang="scss">
+	h1 {
+		font-family: var(--font-heading);
+	}
+	h2 {
+		font-family: var(--font-base);
+	}
+</style>
