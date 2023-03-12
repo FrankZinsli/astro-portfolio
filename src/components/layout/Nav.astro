@@ -1,6 +1,6 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const currentPath = pathname;
 ---
 <div id="menu-button">
   <span></span>
@@ -8,10 +8,10 @@ const currentPath = pathname.slice(1);
   <span></span>
 </div>
 <nav id="main-nav">
-  <a class={currentPath === "ueber-mich" ? "active" : ""} href="/ueber-mich">Über mich<span>Erfahrungen</span></a>
-  <a class={currentPath === "projekte" ? "active" : ""} href="/projekte">Projekte<span>Inspirationen</span></a>
-  <a class={currentPath === "blog" ? "active" : ""} href="/blog">Blog<span>Lesebereich</span></a>
-  <a class={currentPath === "kontakt" ? "active" : ""} href="/kontakt">Kontakt<span>Get in touch!</span></a>
+  <a class={currentPath === "/ueber-mich/" ? "active" : ""} href="/ueber-mich">Über mich<span>Erfahrungen</span></a>
+  <a class={currentPath === "/projekte/" ? "active" : ""} href="/projekte">Projekte<span>Inspirationen</span></a>
+  <a class={currentPath === "/blog/" ? "active" : ""} href="/blog">Blog<span>Lesebereich</span></a>
+  <a class={currentPath === "/kontakt/" ? "active" : ""} href="/kontakt">Kontakt<span>Get in touch!</span></a>
 </nav>
 
 <style lang="scss">
@@ -118,9 +118,8 @@ const currentPath = pathname.slice(1);
     nav {
       position: fixed;
       height: 1px;
-      top: var(--header-height);
-      height: 1px;
-      bottom: -1px;
+      top: calc(var(--header-height) - 1px);
+      z-index: -1;
       left: 0;
       display: flex;
       flex-direction: column;
@@ -161,6 +160,8 @@ const currentPath = pathname.slice(1);
           }
         }
       &.expanded {
+        z-index: 0;
+        top: var(--header-height);
         height: calc(100% - var(--header-height));
       }
     }
