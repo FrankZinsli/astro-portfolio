@@ -1,17 +1,8 @@
 ---
 import Nav from "./Nav.astro";
-import { Image } from '@astrojs/image/components';
-import heroImage from '../../assets/hero.jpg';
+import Logo from "./Logo.astro";
 ---
 <header>
+  <Logo></Logo>
   <Nav></Nav>
-  <Image
-    loading={"eager"}
-    src={heroImage}
-    width={300}
-    aspectRatio="1:1"
-    format={'webp'}
-    fit={"cover"}
-    alt="descriptive text"
-  />
 </header>
