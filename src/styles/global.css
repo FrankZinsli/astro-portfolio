@@ -1,3 +1,14 @@
+/* Variables */
+:root {
+  --font-base: 'Roboto', cursive;
+  --font-heading: 'Comfortaa', sans-serif;
+  --color-primary: #1b1b1b;
+  --color-secondary: #F5F5F5;
+  --color-accent: #f88e0c;
+  --content-max-width: 1440px;
+  --header-height: 5rem;
+}
+
 /* Fonts */
 @font-face {
   font-family: 'Comfortaa';
@@ -35,15 +46,19 @@ h3 {
 h4 {
   font-size: 1.2rem;
 }
+a {
+  color: var(--color-secondary);
+}
 p {
   color: var(--color-accent);
 }
 
-/* Variables */
-:root {
-  --font-base: 'Roboto', cursive;
-  --font-heading: 'Comfortaa', sans-serif;
-  --color-primary: #1b1b1b;
-  --color-secondary: #F5F5F5;
-  --color-accent: #f88e0c;
+/* Styles */
+main {
+  padding: var(--header-height) 1rem 0 ;
+}
+section {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -3,6 +3,32 @@ import Nav from "./Nav.astro";
 import Logo from "./Logo.astro";
 ---
 <header>
-  <Logo></Logo>
-  <Nav></Nav>
+  <div class="wrapper">
+    <Logo></Logo>
+    <Nav></Nav>
+  </div>
 </header>
+
+<style lang="scss">
+  header {
+    background: rgba(255, 255, 255, 0.3);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    backdrop-filter: blur(10px);
+  }
+  .wrapper {
+    width: 100%;
+    max-width: calc(var(--content-max-width) * 1.1);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

@@ -1,15 +1,88 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+import IconLink from "../../assets/link.svg"
+---
+
 <nav>
-  <a href="/ueber-mich">Über mich</a>
-  <a href="/projekte">Projekte</a>
-  <a href="/blog">Blog</a>
-  <a href="/kontakt">Kontakt</a>
+  <a class={currentPath === "ueber-mich" ? "active" : ""} href="/ueber-mich">Über mich<span>Erfahrungen</span></a>
+  <a class={currentPath === "projekte" ? "active" : ""} href="/projekte">Projekte<span>Inspirationen</span></a>
+  <a class={currentPath === "blog" ? "active" : ""} href="/blog">Blog<span>Lesebereich</span></a>
+  <a class={currentPath === "kontakt" ? "active" : ""} href="/kontakt">Kontakt<span>Get in touch!</span></a>
 </nav>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+  nav {
+    height: 100%;
+    display: grid;
+    justify-content: flex-end;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 8rem));
+    width: 100%;
+    a {
+      position: relative;
+      display: block;
+      justify-content: center;
+      height: 100%;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0 .5rem;
+      text-align: center;
+      height: calc(100% - 1.5rem);
+      transition: all ease-in-out 250ms;
+      border-left: solid 2px rgba(255, 255, 255, .0);
+      border-right: solid 2px rgba(255, 255, 255, .0);
+      &:after {
+        transition: width ease-in-out 250ms;
+        display: block;
+        clear: both;
+        content: "";
+        position: relative;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 0;  /* or 100px */
+        border-bottom: solid 3px var(--color-accent);
+        margin: 0 auto;
+        padding: .35rem 0 0;
+      }
+      &:before{
+        transition: all ease-in-out 400ms;
+        content: "";
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg clip-rule='evenodd' fill-rule='evenodd' image-rendering='optimizeQuality' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' version='1.1' viewBox='0 0 509 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m447 347c0-17.1 13.8-30.9 30.9-30.9 17 0 30.9 13.8 30.9 30.9v87.8c0 21.1-8.63 40.3-22.5 54.2-13.9 13.9-33.1 22.5-54.2 22.5h-356c-21.1 0-40.3-8.63-54.2-22.5-13.9-13.9-22.5-33.1-22.5-54.2v-358c0-21.1 8.63-40.3 22.5-54.2s33.1-22.5 54.2-22.5h87c17.1 0 30.9 13.8 30.9 30.9 0 17.1-13.8 30.9-30.9 30.9h-87c-4.07 0-7.82 1.69-10.5 4.37-2.68 2.69-4.37 6.44-4.37 10.5v358c0 4.06 1.69 7.82 4.37 10.5 2.69 2.68 6.44 4.38 10.5 4.38h356c4.07 0 7.82-1.7 10.5-4.38 2.68-2.68 4.37-6.44 4.37-10.5v-87.8zm0-244-139 141c-11.9 12.1-31.4 12.3-43.6 0.37s-12.3-31.4-0.37-43.6l138-139h-92.1c-17.1 0-30.9-13.8-30.9-30.9 0-17 13.8-30.9 30.9-30.9h168c17 0 30.9 13.8 30.9 30.9v165c0 17.1-13.8 30.9-30.9 30.9-17.1 0-30.9-13.8-30.9-30.9v-92.5z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        height: 0;
+        width: 0;
+        opacity: .2;
+        z-index: -1;
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50%, -50%);
+      }
+      span {
+        padding-top: .25rem;
+        font-style: italic;
+        color: var(--color-accent);
+        font-size: .8rem;
+      }
+      &.active {
+        color: var(--color-accent);
+        span {
+          color: var(--color-secondary);
+        }
+      }
+      &:hover {
+        backdrop-filter: blur(0);
+        background: rgba(255,255,255,0.3);
+        &:after {
+          width: 50%;
+        }
+        &:before{
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
   }
 </style>
