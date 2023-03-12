@@ -1,10 +1,13 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
-import IconLink from "../../assets/link.svg"
+const currentPath = pathname.slice(1);
 ---
-
-<nav>
+<div id="menu-button">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<nav id="main-nav">
   <a class={currentPath === "ueber-mich" ? "active" : ""} href="/ueber-mich">Über mich<span>Erfahrungen</span></a>
   <a class={currentPath === "projekte" ? "active" : ""} href="/projekte">Projekte<span>Inspirationen</span></a>
   <a class={currentPath === "blog" ? "active" : ""} href="/blog">Blog<span>Lesebereich</span></a>
@@ -12,6 +15,9 @@ import IconLink from "../../assets/link.svg"
 </nav>
 
 <style lang="scss">
+  #menu-button {
+    display: none;
+  }
   nav {
     height: 100%;
     display: grid;
@@ -86,4 +92,72 @@ import IconLink from "../../assets/link.svg"
       }
     }
   }
+  @media (max-width: 992px) {
+    #menu-button {
+      display: block;
+      width: 40px;
+      height: 30px;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      span {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 4px;
+        width: 40px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+        &:nth-child(2){ top: 10px; }
+        &:nth-child(3){ top: 20px; }
+      }
+    }
+    nav {
+      position: fixed;
+      height: 0;
+      top: var(--header-height);
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      transition: height ease-in-out 500ms;
+      overflow: hidden;
+      &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+      a.active {
+          color: var(--color-secondary);
+          z-index: 1;
+          &::before {
+            top: 0;
+            left: 0;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-accent);
+            opacity: .5;
+            background-size: 50px;
+            background-position: top 50% right 5%;
+          }
+        }
+        a:not(.active):hover {
+          &::before {
+            height: 0;
+            width: 0;
+          }
+        }
+      &.expanded {
+        height: calc(100vh - var(--header-height));
+      }
+    }
+  }
+      
 </style>
