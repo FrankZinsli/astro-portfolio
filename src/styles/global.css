@@ -32,6 +32,7 @@ html, body {
   color: var(--color-secondary);
 }
 h1, h2, h3, h4 {
+  margin: 0;
   font-family: var(--font-heading);
 }
 h1 {
@@ -54,11 +55,15 @@ p {
 }
 
 /* Styles */
-main {
-  padding: var(--header-height) 1rem 0 ;
-}
 section {
+  padding: 0 1rem;
   max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
+}
+section:first-child {
+  padding-top: calc(var(--header-height) + 2rem);
+}
+section:not(:last-child) {
+  margin-bottom: 2rem;
 }
