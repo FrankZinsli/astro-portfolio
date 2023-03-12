@@ -124,7 +124,8 @@ const currentPath = pathname.slice(1);
       flex-direction: column;
       transition: height ease-in-out 500ms;
       overflow: hidden;
-      &::before {
+      &::after {
+        z-index: 1;
         content: '';
         position: absolute;
         width: 100%;
@@ -132,9 +133,11 @@ const currentPath = pathname.slice(1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
+      a {
+        z-index: 2;
+      }
       a.active {
           color: var(--color-secondary);
-          z-index: 1;
           &::before {
             top: 0;
             left: 0;
