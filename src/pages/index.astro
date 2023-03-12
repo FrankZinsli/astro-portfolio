@@ -8,7 +8,6 @@ import Layout from '../layouts/Layout.astro';
   description="Dies ist die Meta Description"  
 >
 	<main>
-		<Swiper client:visible></Swiper>
 		<h1>Herzlich willkommen zu meinem Portfolio</h1>
 		<!-- Introduction -->
 		<section>
@@ -27,23 +26,13 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Kontakt</h2>
 		</section>
 		<h1>Welcome to <span class="text-gradient">Startseite</span></h1>
+
+		<h1>Heading1</h1>
+		<h2>Heading2</h2>
+		<h3>Heading3</h3>
+		<h4>Heading4</h4>
+		<p>Paragraph</p>
 		
+		<Swiper client:visible></Swiper>
 	</main>
 </Layout>
-<style lang="scss" is:global>
-	:root {
-		--font-base: 'Comfortaa', cursive;
-		--font-heading: 'Maven Pro', sans-serif;
-		--color-primary: #ffff;
-		--color-secondary: #efe;
-		--color-accent: #eee;
-	}
-</style>
-<style lang="scss">
-	h1 {
-		font-family: var(--font-heading);
-	}
-	h2 {
-		font-family: var(--font-base);
-	}
-</style>

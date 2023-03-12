@@ -1,0 +1,26 @@
+---
+export interface Props {
+	title: string;
+	description: string
+}
+const { title } = Astro.props;
+const { description } = Astro.props;
+---
+
+<!-- Basic -->
+<meta charset="UTF-8" />
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+
+<!-- Author & Copyright -->
+<meta name="author" content="Frank Zinsli">
+<meta name="abstract" content="Persönliches Portfolio von Frank Zinsli">
+<meta name="classification" content="Portfolio Website">
+<meta name="copyright" content="Copyright by Frank Zinsli - All rights Reserved.">
+<meta name="designer" content="Frank Zinsli">
+<meta name="language" content="de_CH">
+<meta name="publisher" content="Frank Zinsli">
+<meta name="subject" content="Portfolio, Web Design, Code & Tutorials">
+<meta name="keywords" content="Portfolio, Web Design, Code & Tutorials">

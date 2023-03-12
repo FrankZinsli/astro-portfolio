@@ -1,0 +1,31 @@
+---
+export interface Props {
+	title: string;
+	description: string
+}
+const { title } = Astro.props;
+const { description } = Astro.props;
+const defaultDescription = 'Vom Code zur Kreativität: Folgen Sie mir auf meinem digitalen Weg';
+
+import '../../styles/normalize.css';
+import '../../styles/global.css';
+import MetaData from "./MetaData.astro";
+import Matomo from "./Matomo.astro";
+import Icons from "./Icons.astro"
+import OgTags from './OgTags.astro';
+import Pwa from './Pwa.astro';
+import MetaAditional from './MetaAditional.astro';
+---
+
+<head>
+  <MetaData title={title} description={description}></MetaData>
+  <OgTags defaultDescription={defaultDescription}></OgTags>
+  <Pwa></Pwa>
+  <Icons></Icons>  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <MetaAditional></MetaAditional>
+  <Matomo></Matomo>
+</head>

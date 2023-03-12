@@ -1,0 +1,24 @@
+---
+export interface Props {
+	defaultDescription: string
+}
+const { defaultDescription } = Astro.props;
+---
+<!-- Facebook Tags -->
+<meta property="og:url" content="https://frankzinsli.ch">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Frankly Web">
+<meta property="og:image" content="https://frankzinsli.ch/og-image.jpg">
+<meta property="og:image:alt" content="OG-Bild von meinem persönlichen Portfolio.">
+<meta property="og:description" content={defaultDescription}>
+<meta property="og:site_name" content="Frankly Web">
+<meta property="og:locale" content="de_CH">
+<meta property="article:author" content="Frank Zinsli">
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://frankzinsli.ch">
+<meta name="twitter:title" content="Frankly Web">
+<meta name="twitter:description" content={defaultDescription}>
+<meta name="twitter:image" content="https://frankzinsli.ch/og-image.jpg">
+<meta name="twitter:image:alt" content="OG-Bild von meinem persönlichen Portfolio.">

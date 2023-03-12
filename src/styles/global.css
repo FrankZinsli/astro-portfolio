@@ -1,0 +1,49 @@
+/* Fonts */
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html, body {
+  font-size: clamp(0.9375rem, 0.7031rem + 0.75vw, 1.125rem);
+  font-family: var(--font-base);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+p {
+  color: var(--color-accent);
+}
+
+/* Variables */
+:root {
+  --font-base: 'Roboto', cursive;
+  --font-heading: 'Comfortaa', sans-serif;
+  --color-primary: #1b1b1b;
+  --color-secondary: #F5F5F5;
+  --color-accent: #f88e0c;
+}

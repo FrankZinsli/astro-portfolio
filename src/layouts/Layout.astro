@@ -1,5 +1,5 @@
 ---
-import MetaHead from '../components/layout/MetaHead.astro';
+import MetaHead from '../components/head/MetaHead.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 
@@ -13,14 +13,10 @@ const { description } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="de">
-	<MetaHead title={title} description={description}></MetaHead>
-	<body>
-		<Header></Header>
-		<slot />
-		<Footer></Footer>
-	</body>
+  <MetaHead title={title} description={description}></MetaHead>
+  <body>
+  	<Header></Header>
+  	<slot />
+  	<Footer></Footer>
+  </body>
 </html>
-
-<style is:global>
-
-</style>

@@ -1,0 +1,15 @@
+---
+import { Image } from '@astrojs/image/components';
+import logo from '../../assets/Logo-Light.svg';
+---
+<a href="/" title="Logolink zur Homeseite von Frankly Web ">
+  <Image
+    loading={"eager"}
+    src={logo}
+    width={350}
+    height={56}
+    format={'webp'}
+    fit={"cover"}
+    alt="descriptive text"
+  />
+</a>
